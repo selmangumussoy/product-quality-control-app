@@ -1,4 +1,4 @@
-package com.selman.hechaton.model;
+package com.selman.hechaton.models;
 
 public class Product {
     public String id;

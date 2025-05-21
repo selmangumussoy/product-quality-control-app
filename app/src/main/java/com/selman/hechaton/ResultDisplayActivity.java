@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.selman.hechaton.adapter.ProductAdapter;
-import com.selman.hechaton.model.Product;
+import com.selman.hechaton.models.Product;
 
 import java.util.ArrayList;
 import java.util.List;
