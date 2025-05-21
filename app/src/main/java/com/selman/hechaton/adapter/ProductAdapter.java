@@ -39,19 +39,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.id.setText("Ürün ID: " + product.id);
         holder.defectRate.setText("Hata Oranı: %" + product.defect_rate);
 
-        // Hata detaylarını metinleştir
         StringBuilder defects = new StringBuilder();
         if (product.color_defect) defects.append("Renk farkı, ");
         if (product.stain_present) defects.append("Leke, ");
         if (product.cut_defect) defects.append("Kesim hatası, ");
         if (product.structural_issue) defects.append("Yapısal bozukluk, ");
 
-        String defectsText = defects.length() > 0
-                ? "Hatalar: " + defects.substring(0, defects.length() - 2)  // sondaki virgülü sil
-                : "Hatalar: yok";
-        holder.defects.setText(defectsText);
+        holder.defects.setText(defects.length() > 0
+                ? "Hatalar: " + defects.substring(0, defects.length() - 2)
+                : "Hatalar: yok");
 
-        // Durum renklendirme
         boolean isDefective = product.defect_rate > threshold;
         int bgColor = context.getResources().getColor(
                 isDefective ? android.R.color.holo_red_light : android.R.color.holo_green_light
@@ -59,6 +56,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.status.setText(isDefective ? "HATALI" : "HATASIZ");
         holder.itemView.setBackgroundColor(bgColor);
     }
+
 
     @Override
     public int getItemCount() {
