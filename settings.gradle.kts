@@ -9,7 +9,6 @@ pluginManagement {
         }
         mavenCentral()
         maven(url = "https://jitpack.io")
-        // ❗ GEREKLİ SATIR
         gradlePluginPortal()
     }
 }
@@ -20,7 +19,6 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven(url = "https://jitpack.io")
-        // ❗ GEREKLİ SATIR
     }
 }
 

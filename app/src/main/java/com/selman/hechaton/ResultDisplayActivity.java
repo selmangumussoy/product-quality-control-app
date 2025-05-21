@@ -7,15 +7,18 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.google.android.material.button.MaterialButton;
 import com.selman.hechaton.adapter.ProductAdapter;
+import com.selman.hechaton.models.AppDatabase;
 import com.selman.hechaton.models.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ResultDisplayActivity extends AppCompatActivity {
+
 
     public static List<Product> productListGlobal;
     RecyclerView rvProductList;
@@ -35,9 +38,9 @@ public class ResultDisplayActivity extends AppCompatActivity {
 
         // Ürün listesi
         productList = new ArrayList<>();
-        productList.add(new Product("1", 3.4, true, true, false, false));
-        productList.add(new Product("2", 0.5, true, false, false, false));
-        productList.add(new Product("3", 5.1, true, false, true, true));
+        productList.add(new Product("1","", 3.4, true, true, false, false));
+        productList.add(new Product("2","", 0.5, true, false, false, false));
+        productList.add(new Product("3","", 5.1, true, false, true, true));
         productListGlobal = productList;
 
         // İstatistikleri hesapla

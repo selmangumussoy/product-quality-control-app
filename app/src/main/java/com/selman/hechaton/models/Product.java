@@ -1,7 +1,13 @@
 package com.selman.hechaton.models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Product {
+    @PrimaryKey
     public String id;
+    public String imageUrl;
     public double defectRate;
     public boolean isColorIssue;
     public boolean isStain;
@@ -11,7 +17,7 @@ public class Product {
     public Product(int i, String[] strings, double v) {
     }
 
-    public Product(String id, double defectRate, boolean isColorIssue, boolean isStain, boolean isCutIssue, boolean isStructuralIssue) {
+    public Product(String id,String imageUrl, double defectRate, boolean isColorIssue, boolean isStain, boolean isCutIssue, boolean isStructuralIssue) {
         this.id = id;
         this.defectRate = defectRate;
         this.isColorIssue = isColorIssue;
