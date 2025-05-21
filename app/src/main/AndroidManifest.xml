@@ -14,7 +14,7 @@
         android:theme="@style/Hechaton"
         tools:targetApi="31">
 
-        <!-- Ana ekran (ilk açılan) -->
+        <!-- MainActivity: Uygulamanın ilk açılan ekranı -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -24,10 +24,14 @@
             </intent-filter>
         </activity>
 
-        <!-- Diğer activity tanımları -->
+        <!-- Diğer ekranlar -->
         <activity android:name=".ThresholdInputActivity" />
         <activity android:name=".ResultDisplayActivity" />
-        <activity android:name=".ReportActivity" />
+
+        <!-- ActionBar'sız özel tema sadece bu sayfa için -->
+        <activity
+            android:name=".ReportActivity"
+            android:theme="@style/Hechaton.NoActionBar" />
 
     </application>
 
