@@ -35,11 +35,29 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = productList.get(position);
-        holder.id.setText(product.id);
-        holder.defectRate.setText("Defect: " + product.defect_rate + "%");
 
-        int color = product.defect_rate > threshold ? android.R.color.holo_red_light : android.R.color.holo_green_light;
-        holder.itemView.setBackgroundColor(context.getResources().getColor(color));
+        holder.id.setText("Ürün ID: " + product.id);
+        holder.defectRate.setText("Hata Oranı: %" + product.defect_rate);
+
+        // Hata detaylarını metinleştir
+        StringBuilder defects = new StringBuilder();
+        if (product.color_defect) defects.append("Renk farkı, ");
+        if (product.stain_present) defects.append("Leke, ");
+        if (product.cut_defect) defects.append("Kesim hatası, ");
+        if (product.structural_issue) defects.append("Yapısal bozukluk, ");
+
+        String defectsText = defects.length() > 0
+                ? "Hatalar: " + defects.substring(0, defects.length() - 2)  // sondaki virgülü sil
+                : "Hatalar: yok";
+        holder.defects.setText(defectsText);
+
+        // Durum renklendirme
+        boolean isDefective = product.defect_rate > threshold;
+        int bgColor = context.getResources().getColor(
+                isDefective ? android.R.color.holo_red_light : android.R.color.holo_green_light
+        );
+        holder.status.setText(isDefective ? "HATALI" : "HATASIZ");
+        holder.itemView.setBackgroundColor(bgColor);
     }
 
     @Override
@@ -48,11 +66,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView id, defectRate;
+        TextView id, defectRate, defects, status;
+
         public ViewHolder(View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.product_id);
             defectRate = itemView.findViewById(R.id.product_defect);
+            defects = itemView.findViewById(R.id.product_defects);
+            status = itemView.findViewById(R.id.product_status);
         }
     }
 }

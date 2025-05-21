@@ -10,6 +10,16 @@ public class Product {
 
     public Product(int i, String[] strings, double v) {
     }
+
+    public Product(String id, double defect_rate, boolean color_defect, boolean stain_present, boolean cut_defect, boolean structural_issue) {
+        this.id = id;
+        this.defect_rate = defect_rate;
+        this.color_defect = color_defect;
+        this.stain_present = stain_present;
+        this.cut_defect = cut_defect;
+        this.structural_issue = structural_issue;
+    }
+
 }
 
 

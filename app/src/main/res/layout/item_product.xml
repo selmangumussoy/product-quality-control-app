@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="12dp"
-    android:background="@color/background">
+    android:layout_margin="8dp"
+    android:background="@drawable/product_item_background">
 
     <TextView
         android:id="@+id/product_id"
@@ -23,4 +24,22 @@
         android:textSize="14sp"
         android:layout_marginTop="4dp"
         android:textColor="@color/text_secondary" />
+
+    <TextView
+        android:id="@+id/product_defects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hatalar: -"
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary" />
+
+    <TextView
+        android:id="@+id/product_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Durum"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp" />
 </LinearLayout>
