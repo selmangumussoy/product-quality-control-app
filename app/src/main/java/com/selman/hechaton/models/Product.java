@@ -1,11 +1,13 @@
 package com.selman.hechaton.models;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class Product {
     @PrimaryKey
+    @NonNull
     public String id;
     public String imageUrl;
     public double defectRate;
