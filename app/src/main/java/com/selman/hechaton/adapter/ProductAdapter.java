@@ -8,20 +8,20 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.selman.hechaton.PedDetailActivity;
+
 import com.selman.hechaton.R;
-import com.selman.hechaton.model.Ped;
+import com.selman.hechaton.model.Product;
 import java.util.List;
 
-public class PedAdapter extends RecyclerView.Adapter<PedAdapter.PedViewHolder> {
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.PedViewHolder> {
 
     private Context context;
-    private List<Ped> pedList;
+    private List<Product> productList;
     private double threshold;
 
-    public PedAdapter(Context context, List<Ped> pedList, double threshold) {
+    public ProductAdapter(Context context, List<Product> productList, double threshold) {
         this.context = context;
-        this.pedList = pedList;
+        this.productList = productList;
         this.threshold = threshold;
     }
 
@@ -34,12 +34,12 @@ public class PedAdapter extends RecyclerView.Adapter<PedAdapter.PedViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull PedViewHolder holder, int position) {
-        Ped ped = pedList.get(position);
-        holder.pedId.setText(ped.id);
-        holder.defectRate.setText("Defect: " + ped.defect_rate + "%");
+        Product product = productList.get(position);
+        holder.pedId.setText(product.id);
+        holder.defectRate.setText("Defect: " + product.defect_rate + "%");
 
         // Renk ayarı (threshold'a göre)
-        if (ped.defect_rate > threshold) {
+        if (product.defect_rate > threshold) {
             holder.itemView.setBackgroundColor(context.getResources().getColor(android.R.color.holo_red_light));
         } else {
             holder.itemView.setBackgroundColor(context.getResources().getColor(android.R.color.holo_green_light));
@@ -47,14 +47,14 @@ public class PedAdapter extends RecyclerView.Adapter<PedAdapter.PedViewHolder> {
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, PedDetailActivity.class);
-            intent.putExtra("ped", ped.id);
+            intent.putExtra("ped", product.id);
             context.startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
-        return pedList.size();
+        return productList.size();
     }
 
     public static class PedViewHolder extends RecyclerView.ViewHolder {

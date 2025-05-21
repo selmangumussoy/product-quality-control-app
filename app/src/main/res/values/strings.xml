@@ -1,3 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">hechaton</string>
+    <!-- Genel -->
+    <string name="app_name">Kalite Kontrol</string>
+    <string name="app_title">Medikal Ürün Kalite Kontrolü</string>
+    <string name="app_subtitle">Görüntü İşleme ile Akıllı Üretim</string>
+    <string name="app_version">v1.0</string>
+    <string name="app_logo_description">Uygulama Logosu</string>
+
+    <!-- MainActivity -->
+    <string name="welcome_message">Hoş Geldiniz!</string>
+    <string name="app_description">Bu uygulama ile bozuk ürünleri tespit edebilirsiniz.</string>
+    <string name="btn_start">Başla</string>
+
+    <!-- ThresholdInputActivity -->
+    <string name="enter_threshold">Hata oranını girin (%):</string>
+    <string name="btn_continue">Devam Et</string>
+
+    <!-- ResultDisplayActivity -->
+    <string name="results_title">Tespit Edilen Ürünler</string>
+
+    <!-- ReportActivity -->
+    <string name="report_title">Raporlama</string>
+    <string name="export_report">Raporu Dışa Aktar</string>
 </resources>
