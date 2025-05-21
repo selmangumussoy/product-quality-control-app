@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp"
-    android:layout_margin="8dp"
-    android:background="@drawable/product_item_background">
+    android:layout_margin="12dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="4dp">
 
-    <TextView
-        android:id="@+id/product_id"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Product ID"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/text_primary" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/product_defect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Defect Rate: 0.0%"
-        android:textSize="14sp"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/text_secondary" />
+        <TextView
+            android:id="@+id/product_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ürün ID"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
 
-    <TextView
-        android:id="@+id/product_defects"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hatalar: -"
-        android:textSize="14sp"
-        android:textColor="@color/text_secondary" />
+        <TextView
+            android:id="@+id/product_defect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hata Oranı"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:textColor="#333333" />
 
-    <TextView
-        android:id="@+id/product_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Durum"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="8dp" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/product_defects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hatalar"
+            android:textSize="14sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/product_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Durum"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
