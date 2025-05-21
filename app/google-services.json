@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657581670037",
+    "project_id": "hechaton1",
+    "storage_bucket": "hechaton1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657581670037:android:27e76313ba2d695aa6659c",
+        "android_client_info": {
+          "package_name": "com.selman.hechaton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv8YSAAdvYucbCDeGvC_0-uxHbSNfZHFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
