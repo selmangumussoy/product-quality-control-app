@@ -29,11 +29,26 @@ public class ResultDisplayActivity extends AppCompatActivity {
         rvProductList = findViewById(R.id.rvProductList);
         rvProductList.setLayoutManager(new LinearLayoutManager(this));
 
-        // Örnek veriler
+        // Ürünleri oluştur (dummy veri)
         productList.add(new Product("1", 3.4, true, true, false, false));
         productList.add(new Product("2", 0.5, false, false, false, false));
         productList.add(new Product("3", 5.1, false, false, true, true));
 
+        // %0 kontrolü özel
+        if (ThresholdInputActivity.userThreshold == 0.0) {
+            boolean hasZeroDefect = false;
+            for (Product p : productList) {
+                if (p.defect_rate == 0.0) {
+                    hasZeroDefect = true;
+                    break;
+                }
+            }
+            if (!hasZeroDefect) {
+                Toast.makeText(this, "Yüzde 0 hatalı ürün bulunmamaktadır", Toast.LENGTH_LONG).show();
+            }
+        }
+
+        // Tüm ürünler gösterilecek
         adapter = new ProductAdapter(this, productList, ThresholdInputActivity.userThreshold);
         rvProductList.setAdapter(adapter);
 

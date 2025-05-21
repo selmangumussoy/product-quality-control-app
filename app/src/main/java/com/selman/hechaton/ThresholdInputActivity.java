@@ -11,7 +11,7 @@ public class ThresholdInputActivity extends AppCompatActivity {
     EditText etThreshold;
     MaterialButton btnContinue;
 
-    public static double userThreshold = 0.0; // Global erişim için
+    public static double userThreshold = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
