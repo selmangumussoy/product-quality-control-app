@@ -1,31 +1,52 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/product_item_background">
+    android:fillViewport="true"
+    android:background="@color/white">
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
-
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChart"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="24dp" />
-
-    <TextView
-        android:id="@+id/tvSustainability"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="⚠️ Her bir hatalı ürünün geri dönüşümü veya atılması maliyetlidir.\nKalite kontrol ile kaynak israfı azaltılır ve çevresel sürdürülebilirliğe katkı sağlanır."
-        android:textSize="14sp"
-        android:textColor="@android:color/black"
-        android:paddingTop="16dp"
-        android:gravity="center" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</LinearLayout>
+        <!-- Başlık -->
+        <TextView
+            android:id="@+id/tvReportTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kalite Kontrol"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@color/purple_700"
+            android:padding="12dp" />
+
+        <!-- Pie Chart -->
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Bar Chart -->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="24dp" />
+
+        <!-- Açıklama -->
+        <TextView
+            android:id="@+id/tvExplanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠️ Her bir hatalı ürünün geri dönüşümü veya atılması maliyetlidir.\nKalite kontrol ile kaynak israfı azaltılır ve çevresel sürdürülebilirliğe katkı sağlanır."
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+</ScrollView>
