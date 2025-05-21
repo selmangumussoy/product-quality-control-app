@@ -31,14 +31,15 @@ public class ResultDisplayActivity extends AppCompatActivity {
 
         // Ürünleri oluştur (dummy veri)
         productList.add(new Product("1", 3.4, true, true, false, false));
-        productList.add(new Product("2", 0.5, false, false, false, false));
-        productList.add(new Product("3", 5.1, false, false, true, true));
+        productList.add(new Product("2", 0.5, true, false, false, false));
+        productList.add(new Product("3", 5.1, true, false, true, true));
 
+        productListGlobal = productList;
         // %0 kontrolü özel
         if (ThresholdInputActivity.userThreshold == 0.0) {
             boolean hasZeroDefect = false;
             for (Product p : productList) {
-                if (p.defect_rate == 0.0) {
+                if (p.defectRate == 0.0) {
                     hasZeroDefect = true;
                     break;
                 }

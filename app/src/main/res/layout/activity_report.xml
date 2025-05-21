@@ -1,46 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:background="@color/background">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/product_item_background">
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="24dp" />
 
     <TextView
-        android:id="@+id/tvReportTitle"
-        android:layout_width="0dp"
+        android:id="@+id/tvSustainability"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/report_title"
-        android:textSize="20sp"
-        android:textColor="@color/text_primary"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnExportReport"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/export_report"
-        android:textSize="16sp"
-        android:layout_marginTop="24dp"
-        app:cornerRadius="8dp"
-        android:backgroundTint="@color/primary"
-        app:layout_constraintTop_toBottomOf="@id/tvReportTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvExportStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/text_hint"
+        android:text="⚠️ Her bir hatalı ürünün geri dönüşümü veya atılması maliyetlidir.\nKalite kontrol ile kaynak israfı azaltılır ve çevresel sürdürülebilirliğe katkı sağlanır."
         android:textSize="14sp"
-        android:text=""
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/btnExportReport"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:textColor="@android:color/black"
+        android:paddingTop="16dp"
+        android:gravity="center" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
