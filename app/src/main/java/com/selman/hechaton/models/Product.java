@@ -2,24 +2,71 @@ package com.selman.hechaton.models;
 
 public class Product {
     public String id;
-    public double defect_rate;
-    public boolean color_defect;
-    public boolean stain_present;
-    public boolean cut_defect;
-    public boolean structural_issue;
+    public double defectRate;
+    public boolean isColorIssue;
+    public boolean isStain;
+    public boolean isCutIssue;
+    public boolean isStructuralIssue;
 
     public Product(int i, String[] strings, double v) {
     }
 
-    public Product(String id, double defect_rate, boolean color_defect, boolean stain_present, boolean cut_defect, boolean structural_issue) {
+    public Product(String id, double defectRate, boolean isColorIssue, boolean isStain, boolean isCutIssue, boolean isStructuralIssue) {
         this.id = id;
-        this.defect_rate = defect_rate;
-        this.color_defect = color_defect;
-        this.stain_present = stain_present;
-        this.cut_defect = cut_defect;
-        this.structural_issue = structural_issue;
+        this.defectRate = defectRate;
+        this.isColorIssue = isColorIssue;
+        this.isStain = isStain;
+        this.isCutIssue = isCutIssue;
+        this.isStructuralIssue = isStructuralIssue;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public double getDefectRate() {
+        return defectRate;
+    }
+
+    public void setDefectRate(double defectRate) {
+        this.defectRate = defectRate;
+    }
+
+    public boolean isColorIssue() {
+        return isColorIssue;
+    }
+
+    public void setColorIssue(boolean colorIssue) {
+        isColorIssue = colorIssue;
+    }
+
+    public boolean isStain() {
+        return isStain;
+    }
+
+    public void setStain(boolean stain) {
+        isStain = stain;
+    }
+
+    public boolean isCutIssue() {
+        return isCutIssue;
+    }
+
+    public void setCutIssue(boolean cutIssue) {
+        isCutIssue = cutIssue;
+    }
+
+    public boolean isStructuralIssue() {
+        return isStructuralIssue;
+    }
+
+    public void setStructuralIssue(boolean structuralIssue) {
+        isStructuralIssue = structuralIssue;
+    }
 }
 
 

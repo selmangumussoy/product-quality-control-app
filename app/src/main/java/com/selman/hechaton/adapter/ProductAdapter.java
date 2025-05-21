@@ -5,10 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.selman.hechaton.R;
 import com.selman.hechaton.models.Product;
 
@@ -37,14 +35,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         Product product = productList.get(position);
 
         holder.id.setText("Ürün ID: " + product.id);
-        holder.defectRate.setText("Hata Oranı: %" + product.defect_rate);
+        holder.defectRate.setText("Hata Oranı: %" + product.defectRate);
 
         // Hata detaylarını metinleştir
         StringBuilder defects = new StringBuilder();
-        if (product.color_defect) defects.append("Renk farkı, ");
-        if (product.stain_present) defects.append("Leke, ");
-        if (product.cut_defect) defects.append("Kesim hatası, ");
-        if (product.structural_issue) defects.append("Yapısal bozukluk, ");
+        if (product.isColorIssue) defects.append("Renk farkı, ");
+        if (product.isStain) defects.append("Leke, ");
+        if (product.isCutIssue) defects.append("Kesim hatası, ");
+        if (product.isStructuralIssue) defects.append("Yapısal bozukluk, ");
 
         String defectsText = defects.length() > 0
                 ? "Hatalar: " + defects.substring(0, defects.length() - 2)  // sondaki virgülü sil
@@ -52,7 +50,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.defects.setText(defectsText);
 
         // Durum renklendirme
-        boolean isDefective = product.defect_rate > threshold;
+        boolean isDefective = product.defectRate > threshold;
         int bgColor = context.getResources().getColor(
                 isDefective ? android.R.color.holo_red_light : android.R.color.holo_green_light
         );

@@ -1,10 +1,13 @@
 package com.selman.hechaton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.button.MaterialButton;
 import com.selman.hechaton.adapter.ProductAdapter;
 import com.selman.hechaton.models.Product;
 
@@ -13,6 +16,7 @@ import java.util.List;
 
 public class ResultDisplayActivity extends AppCompatActivity {
 
+    public static List<Product> productListGlobal;
     RecyclerView rvProductList;
     List<Product> productList = new ArrayList<>();
     ProductAdapter adapter;
@@ -34,5 +38,11 @@ public class ResultDisplayActivity extends AppCompatActivity {
         rvProductList.setAdapter(adapter);
 
         Toast.makeText(this, "Toplam " + productList.size() + " ürün listelendi.", Toast.LENGTH_SHORT).show();
+
+        MaterialButton btnOpenReport = findViewById(R.id.btnOpenReport);
+        btnOpenReport.setOnClickListener(v -> {
+            Intent intent = new Intent(ResultDisplayActivity.this, ReportActivity.class);
+            startActivity(intent);
+        });
     }
 }
