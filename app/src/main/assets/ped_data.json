@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ped_001",
+    "defect_rate": 3.2,
+    "color_defect": true,
+    "stain_present": false,
+    "cut_defect": true,
+    "structural_issue": false
+  },
+  {
+    "id": "ped_002",
+    "defect_rate": 0.8,
+    "color_defect": false,
+    "stain_present": false,
+    "cut_defect": false,
+    "structural_issue": false
+  }
+]
