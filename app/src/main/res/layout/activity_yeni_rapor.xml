@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Grafik 1 -->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Son 15 dakikada yırtık ve leke hataları toplamda 65 adede ulaştı (beklenenin %280 üzerinde).\nHammadde kalitesinde ciddi bir sorun veya üretim ortamında kontaminasyon olabilir.\nEtkilenen hat: HAT-4. Son 3 serideki ürünler gözden geçirilmeli."
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <!-- Grafik 2 -->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart2"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yırtık hataları son 30 dakikada 5 dakikalık periyotlarla artıyor.\nOlası neden: Kesici bıçakta aşınma veya ruloda sıkışma.\nKritik eşik geçildi – sistem yavaşlatılması önerilir."
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <!-- Grafik 3 -->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart3"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3 numaralı üretim hattında leke hatalarında olağandışı artış var.\nKontaminasyon olabilir.\nEtkilenen hat: HAT-3"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <!-- Grafik 4 -->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart4"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Katlanmış ped oranı son 10 dakikada %14’e yükseldi.\nEn fazla hata taşıma bandı B-02’de.\nTaşıma sistemleri yeniden kalibre edilmeli."
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="14sp" />
+
+        <!-- Renk Anlamları -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🟥 Kırmızı: Yırtık\n🟦 Mavi: Leke\n🟩 Yeşil: Katlanma"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="32dp"
+            android:padding="8dp"/>
+    </LinearLayout>
+</ScrollView>

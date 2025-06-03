@@ -1,27 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Ana Arkaplan -->
     <color name="background">#FFFFFF</color>
-
-    <!-- Metin Renkleri -->
     <color name="text_primary">#212121</color>
     <color name="text_secondary">#757575</color>
     <color name="text_hint">#BDBDBD</color>
-
-    <!-- Ana Renkler -->
     <color name="primary">#3F51B5</color>
     <color name="primary_dark">#303F9F</color>
     <color name="accent">#FF4081</color>
-
-    <!-- Kart Rengi -->
     <color name="card_background">#F5F5F5</color>
 
-    <color name="red_light">#FFCDD2</color>
-    <color name="green_light">#C8E6C9</color>
+    <color name="red_light">#EF5350</color>
+    <color name="green_light">#66BB6A</color>
+    <color name="blue">#42A5F5</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="purple_700">#6200EE</color>
-    <!-- Durumlar -->
+
     <color name="status_success">#4CAF50</color>
     <color name="status_error">#F44336</color>
+    <color name="orange">#FFA726</color>
+
 </resources>
